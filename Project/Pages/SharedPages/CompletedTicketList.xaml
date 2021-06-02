@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.Pages.SuperPages.CompletedTicketList">
+    <ListView x:Name="TicketView"
+            CachingStrategy="RecycleElement"
+              ItemTapped="TicketView_ItemTapped"
+            ListView.RowHeight="400"
+               Style="{StaticResource Key=MainLayout}">
+        <ListView.Header>
+            <Label Text="Completed Tickets" Style="{StaticResource Key=DataTitle}"/>
+        </ListView.Header>
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout  Style="{StaticResource Key=DataPresentation}">
+                        <Label  Style="{StaticResource Key=CellStart}"/>
+                        <Label Text="{Binding Id, StringFormat='Ticket ID: {0}'}" IsEnabled="False" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding Store, StringFormat='Store Name: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding BookedDate, StringFormat='Booked Date: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding Comments, StringFormat='Comments: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding StartTime, StringFormat='Start Time: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding EndTime, StringFormat='End Time: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding CompletedTime, StringFormat='Completed Time: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding CompletedDate, StringFormat='Completed Date: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="Tap Ticket to View Image" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellLine}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

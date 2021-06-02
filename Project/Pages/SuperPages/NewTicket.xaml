@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Project"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="Project.Pages.SuperPages.NewTicket">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainLayout}">
+            <Frame BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
+                <Label Text="Add New Ticket"
+                HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
+            </Frame>
+            
+            <Picker x:Name="storePicker" Title="Select Store" VerticalOptions="CenterAndExpand" />
+            <!--remove-->
+            <Label Text="Enter Booking Date" Style="{StaticResource DataText}"/>
+            <DatePicker x:Name="bookedDate" MinimumDate="{x:Static sys:DateTime.Now}" DateSelected="DateSelected" />
+            
+            <Button Text="Save" Clicked="SaveButton_Clicked" Style="{StaticResource MainButtons}"></Button>
+            <Button Text="Clear" Clicked="ClearButton_Clicked" Style="{StaticResource MainButtons}"></Button>
+            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Style="{StaticResource MainLayout}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+<!--for later
+<Picker x:Name="storePicker" Title="Select Store" VerticalOptions="CenterAndExpand" />
+<Entry x:Name="store" Text="{Binding Store}" Placeholder="Enter Store Name"/>
+--><!--remove--><!--
+<Entry x:Name="comments" Text="{Binding Comments}" Placeholder="Enter Comments" />
+<Entry x:Name="bookedDate" Text="{Binding BookedDate}" Placeholder="Enter Booking Date"/>
+--><!--remove all entrys bellow--><!--
+<Entry x:Name="startTime" Text="{Binding StartTime}" Placeholder="Enter Start Time"/>
+<Entry x:Name="endTime" Text="{Binding EndTime}" Placeholder="Enter Finish Time" />
+<Entry x:Name="completedTime" Text="{Binding CompletedTime}" Placeholder="Enter Completed Time" />
+<Entry x:Name="completedDate" Text="{Binding CompletedDate}" Placeholder="Enter Completed Date" />
+<Entry x:Name="displayPhoto" Text="{Binding DisplayPhoto}" Placeholder="Take Display Photo"/>-->

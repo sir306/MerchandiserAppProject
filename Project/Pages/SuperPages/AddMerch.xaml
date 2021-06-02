@@ -1,0 +1,20 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.Pages.SuperPages.AddMerch">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainLayout}">
+            <Label Text="Add a New Merchandiser"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Style="{StaticResource MainLayout}" FontSize="Title" FontAttributes="Bold" />
+
+            <Entry x:Name="name" Text="{Binding Name}" Placeholder="Enter Merchandiser Name"/>
+            <Entry x:Name="contactNum" Text="{Binding ContactNum}" Placeholder="Enter Contact Number" />
+
+            <Button Text="Save" Clicked="SaveButton_Clicked" Style="{StaticResource MainButtons}"></Button>
+            <Button Text="Clear" Clicked="ClearButton_Clicked" Style="{StaticResource MainButtons}"></Button>
+            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Style="{StaticResource MainLayout}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

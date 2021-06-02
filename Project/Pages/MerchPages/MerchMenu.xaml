@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Pages.Menu"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Style="{StaticResource MainLayout}">
+                <Frame BackgroundColor="#2196F3" Padding="0" CornerRadius="0">
+                    <Label Text="Menu"
+                HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
+                </Frame>
+                <Label HeightRequest="40"/>
+                <Button Text="Active Tickets" Style="{StaticResource MainButtons}" Command="{Binding ViewActiveTickets}"></Button>
+                <Button Text="Completed Tickets" Style="{StaticResource MainButtons}" Command="{Binding ViewCompletedTickets}"></Button>
+                <Button Text="Stores" Style="{StaticResource MainButtons}" Command="{Binding ViewStores}"></Button>
+
+                <Button Text="Sign Out" Style="{StaticResource MainButtons}" VerticalOptions="EndAndExpand" Command="{Binding SignOut}"></Button>
+                <Label HeightRequest="40"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

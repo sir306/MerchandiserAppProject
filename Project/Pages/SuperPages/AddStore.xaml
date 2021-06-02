@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.Pages.SuperPages.AddStore">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainLayout}">
+            <Label Text="Add New Store"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Style="{StaticResource MainLayout}" FontSize="Title" FontAttributes="Bold" />
+            
+            <Entry x:Name="store" Text="{Binding StoreName}" Placeholder="Enter Store Name"/>
+            <Entry x:Name="storeManager" Text="{Binding StoreManger}" Placeholder="Enter Store Managers Name" />
+            <Entry x:Name="storeNumber" Text="{Binding StoreNumber}" Placeholder="Enter the Store's contact Number"/>
+            <Entry x:Name="address" Text="{Binding Address}" Placeholder="Enter Store's Address"/>
+            <Picker x:Name="merchPicker" Title="Select Merchandiser" VerticalOptions="CenterAndExpand" />
+            <Button Text="Save" Clicked="SaveButton_Clicked" Style="{StaticResource MainButtons}"></Button>
+            <Button Text="Clear" Clicked="ClearButton" Style="{StaticResource MainButtons}"></Button>
+            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Style="{StaticResource MainLayout}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

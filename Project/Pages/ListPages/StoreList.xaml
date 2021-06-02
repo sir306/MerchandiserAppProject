@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Pages.ListPages.StoreList">
+  <ListView x:Name="StoreView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+            ListView.RowHeight="200">
+        <ListView.Header>
+            <StackLayout>
+                <Label Text="Store Details"
+                       Style="{StaticResource DataTitle}"/>
+            </StackLayout>
+        </ListView.Header>
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Style="{StaticResource Key=DataPresentation}">
+                        <Label Style="{StaticResource Key=CellStart}"/>
+                        <Label x:Name="store" Text="{Binding StoreName, StringFormat = 'Store Name: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label x:Name="storeManager" Text="{Binding StoreManger, StringFormat = 'Store Manager: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label x:Name="storeNumber" Text="{Binding StoreNumber, StringFormat = 'Store Number: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label x:Name="address" Text="{Binding Address, StringFormat = 'Store Address: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label x:Name="merchandiserKey" Text="{Binding MerchandiserKey, StringFormat = 'Assigned Merchandiser ID: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label x:Name="merchandiserName" Text="{Binding MerchandiserName, StringFormat = 'Assigned Merchandiser: {0}'}" Style="{StaticResource Key=DataText}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Add" Activated="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

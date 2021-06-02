@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.Pages.SuperPages.MerchandiserList">
+    <ListView x:Name="MerchandisersView"
+            ItemsSource="{Binding merchandisers}"
+            ItemTapped="Handle_ItemTapped"
+            CachingStrategy="RecycleElement"
+            ListView.RowHeight="120"
+               Style="{StaticResource Key=MainLayout}">
+        <ListView.Header>
+            <Label Text="Merchandiser List" Style="{StaticResource Key=DataTitle}"/>
+        </ListView.Header>
+        <!--Built in Cells-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Style="{StaticResource Key=DataPresentation}">
+                        <Label Style="{StaticResource Key=CellStart}"/>
+                        <Label Text="{Binding MerchId, StringFormat='Merchandiser ID: {0}'}" IsEnabled="False" Style="{StaticResource Key=DataText}"/>
+                        <Label Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding Name, StringFormat='Merchandiser Name: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label Style="{StaticResource Key=CellLine}"/>
+                        <Label Text="{Binding ContactNum, StringFormat='Contact Number: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label Style="{StaticResource Key=CellLine}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Add" Activated="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Pages.SignIn"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightGray">
+            <Frame BackgroundColor="#2196F3" CornerRadius="0">
+                <Label Text="Sign In" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="0" Margin="0" TextColor="White" FontSize="36"/>
+            </Frame>
+            
+            <Label Text="{Binding UserType, StringFormat='Enter your {0} username:'}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Black"/>
+            <Entry Text="{Binding Username}" Placeholder="Enter your username" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large"></Entry>
+            <Label Text="{Binding UserType}" IsVisible="false" x:Uid="Test"/>
+            <Label Text="{Binding UserType, StringFormat='Enter your {0} password:'}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Black"/>
+            <Entry Text="{Binding Password}" IsPassword="True" Placeholder="Enter your password" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" FontSize="Large"></Entry>
+            
+            <FlexLayout VerticalOptions="Center" HorizontalOptions="Center" JustifyContent="SpaceEvenly">
+                <Button Text="Sign In" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Style="{StaticResource MainButtons}" Clicked="SignInButton"></Button>
+                <Button Text="Back" Clicked="BackButton" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Style="{StaticResource MainButtons}"></Button>
+                <!--<Button Text="delete database" Clicked="Button_Clicked"></Button>-->
+            </FlexLayout>
+            
+            <!--<Label Text="{Binding DisplayName}"  FontSize="Large"/>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

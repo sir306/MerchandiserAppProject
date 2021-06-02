@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Pages.SuperPages.UpdateDeleteMerch">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource MainLayout}">
+            <Label Text="Update or Delete Merchandiser"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Style="{StaticResource MainLayout}" FontSize="Title" FontAttributes="Bold" />
+
+            <Entry x:Name="name" Text="{Binding Name}" Placeholder="Enter Merchandiser Name"/>
+            <Entry x:Name="contactNum" Text="{Binding ContactNum}" Placeholder="Enter Contact Number" />
+
+            <Button Text="Save" Clicked="UpdateButton_Clicked" Style="{StaticResource MainButtons}"></Button>
+            <Button Text="Delete" Clicked="DeleteButton_Clicked" Style="{StaticResource MainButtons}"></Button>
+            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Style="{StaticResource MainLayout}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Project"
+             x:Class="Project.ListPages.TicketListView">
+  
+<ListView x:Name="TicketView"      
+            ItemTapped="Handle_ItemTapped"    
+            ListView.RowHeight="180">
+        <ListView.Header>
+            <StackLayout>
+                <Label Text="Current Tickets"
+                       Style="{StaticResource DataTitle}"/>
+            </StackLayout>
+        </ListView.Header>
+    <!--Ticket List Views-->
+        <ListView.ItemTemplate >
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Vertical" Style="{StaticResource DataPresentation }">
+                        <Label Style="{StaticResource CellStart}" />
+                        <Label x:Name="id" Text="{Binding Id, StringFormat='Ticket: {0}'}" Style="{StaticResource DataText}"/>
+                        <Label Style="{StaticResource CellLine}" />
+                        <Label x:Name="store" Text="{Binding Store, StringFormat='Store Name: {0}'}" Style="{StaticResource DataText}"/>
+                        <Label Style="{StaticResource CellLine}" />
+                        <Label x:Name="bookedDate" Text="{Binding BookedDate, StringFormat='Booked Date: {0}'}" Style="{StaticResource DataText}"/>
+                        <Label Style="{StaticResource CellLine}" />
+                        <Label Text="{Binding MerchName, StringFormat='Assigned Merchandiser: {0}'}" Style="{StaticResource Key=DataText}"/>
+                        <Label  Style="{StaticResource Key=CellStart}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Add" Activated="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>
